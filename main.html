@@ -11,28 +11,16 @@
   <script>
     // Fetch data from JSON file
     fetch("employees.json")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch JSON");
-        }
-        return response.json();
-      })
-      .then(data => {
-        // Sort by age (ascending)
-        const sortedEmployees = data.sort((a, b) => a.age - b.age);
-        
-        // Display in HTML
-        const list = document.getElementById("employeeList");
-        sortedEmployees.forEach(emp => {
-          const li = document.createElement("li");
-          li.textContent = `${emp.name} - Age: ${emp.age}`;
-          list.appendChild(li);
-        });
+  .then(response => response.json())
+  .then(data => {
+    // Sort employees by age
+    const sortedEmployees = data.sort((a, b) => a.age - b.age);
 
-        // Console log sorted data
-        console.log(sortedEmployees);
-      })
-      .catch(error => console.error("Error:", error));
+    // ✅ Log the sorted array in console
+    console.log(sortedEmployees);
+  })
+  .catch(error => console.error("Error fetching JSON:", error));
+
   </script>
 </body>
 </html>
