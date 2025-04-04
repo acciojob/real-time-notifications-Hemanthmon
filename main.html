@@ -15,7 +15,7 @@
 
 		function ascendingOrder(employees) {
 			employees.sort((a, b) => a.age - b.age);
-			return employees.map(emp => `${emp.id},${emp.name}, ${emp.age}, ${emp.contact}`);
+			return employees
 		}
 
 		const sortedEmployees = ascendingOrder(employees);
