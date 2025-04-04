@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
@@ -7,10 +6,21 @@
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+	<script type="text/javascript">
+		const employees = [
+			{ id: 1, name: "John Smith", age: 35, contact: "+1 555-1234", zip: "10001" },
+			{ id: 2, name: "Alice Johnson", age: 28, contact: "+1 555-5678", zip: "10002" },
+			{ id: 3, name: "Bob Brown", age: 42, contact: "+1 555-9012", zip: "10003" }
+		];
 
+		function ascendingOrder(employees) {
+			employees.sort((a, b) => a.age - b.age);
+			return employees.map(emp => `${emp.id},${emp.name}, ${emp.age}, ${emp.contact}`);
+		}
+
+		const sortedEmployees = ascendingOrder(employees);
+		sortedEmployees.forEach(emp => console.log(emp));
+	</script>
 </body>
 
 </html>
