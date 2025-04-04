@@ -5,8 +5,8 @@ fetch('people.json')
   })
   .then(data => {
     const sortedData = data.sort((a, b) => a.age - b.age); // ascending by age
-    console.log('Sorted Data (by age):', sortedData);
+    console.log(sortedData);
   })
   .catch(error => {
-    console.error('Fetch error:', error);
+    console.error(error);
   });
